@@ -10,6 +10,10 @@ const studentRoutes = require('./routes/students');
 const assignmentRoutes = require('./routes/assignments');
 
 const app = express();
+
+// Required for Vercel / reverse proxy deployments
+app.set('trust proxy', 1);
+
 connectDB();
 
 app.use(helmet());
